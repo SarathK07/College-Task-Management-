@@ -5,7 +5,7 @@ from .views import (
     StudentTaskListView,
     MarkTaskCompleteView
 )
-#wfvdvd
+#wfvdvda
 urlpatterns = [
     path('trainer/students/', TrainerStudentListView.as_view()),
     path('trainer/assign-task/', AssignTaskView.as_view()),
