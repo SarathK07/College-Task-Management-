@@ -116,7 +116,8 @@ class LoginAPIView(APIView):
             "user": serializer.data,
             "tokens": {
                 "access": access,
-                "refresh": refresh_token
+                "refresh": refresh_token,
+                "message": "Login API working"
             }
         }, status=status.HTTP_200_OK)
 
@@ -296,7 +297,7 @@ class StudentDetailView(APIView):
 
     def put(self, request, pk):
         try:
-            student = User.objects.get(id=pk, role='trainer')
+            student = User.objects.get(id=pk, role='student')
         except User.DoesNotExist:
             return Response(
                 {"status": "error", "message": "student not found"},
@@ -319,7 +320,7 @@ class StudentDetailView(APIView):
             student = User.objects.get(id=pk, role='student')
         except User.DoesNotExist:
             return Response(
-                {"status": "error", "message": "Trainer not found"},
+                {"status": "error", "message": "student not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
 
