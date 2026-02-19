@@ -55,7 +55,7 @@ class RegisterAPIView(APIView):
             role = role.strip().lower()
             if role not in allowed_roles:
                 errors["role"] = [f"Role must be one of: {', '.join(sorted(allowed_roles))}."]
-        # Disallow creating admin via this endpoint
+        # Disallow creating admin via this endpointhjbhjbhjbhjb
         if role == User.ROLE_ADMIN:
             errors.setdefault("role", []).append("Cannot register as admin via this endpoint.")
 
